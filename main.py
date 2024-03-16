@@ -39,7 +39,7 @@ def testListaConcatenata(dimMax, n, passo,numripetizioniinterne):  # n corrispon
                     lista.aggiungi_elemento(dato)
                 end_time = ptimer()
 
-                t_tot += (end_time - start_time) / 10
+                t_tot += (end_time - start_time) / numripetizioniinterne
                 if numripetizioniinterne > 1:
                     for _ in range(numripetizioniinterne - 1):
                         lista.cancella_in_testa()  # tolgo tutti gli elementi eccetto che uno per far si che trova il massimo si può basare su una struttura dati
@@ -50,7 +50,7 @@ def testListaConcatenata(dimMax, n, passo,numripetizioniinterne):  # n corrispon
             for _ in range(numripetizioniinterne):
                 lista.trova_massimo()
             end_time1 = ptimer()
-            t_tot_media = (end_time1 - start_time1) / 10  # media totale delle ricerche
+            t_tot_media = (end_time1 - start_time1) / numripetizioniinterne  # media totale delle ricerche
 
             # tempi_di_ricerca_massimo_lista[(j-1) // passo]=
             if i == 0:
@@ -92,4 +92,4 @@ def testListaConcatenata(dimMax, n, passo,numripetizioniinterne):  # n corrispon
     plt.show()
 
 
-testListaConcatenata(dimMax=1000, n=15, passo=10,numripetizioniinterne=150)
+testListaConcatenata(dimMax=1000, n=10, passo=10,numripetizioniinterne=50)
